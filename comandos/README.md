@@ -18,5 +18,5 @@ git config --global init.defaultBranch main
 git init
 git add .
 git commit -m 'Mensagem'
-git remote add origin URL_DO_MEU_GIT
+git remote add origin MEU_GIT
 ```
