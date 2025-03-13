@@ -34,6 +34,7 @@ def contact(request, contact_id):
 
 def search(request):
     search_value = request.GET.get('q', '').strip()
+    print(f"Valor pesquisado: '{search_value}'")
 
     if search_value == '':
         return redirect('contact:index')
@@ -47,7 +48,8 @@ def search(request):
             Q(email__icontains=search_value)
         )\
         .order_by('-id')
-    
+
+    print(f"Resultados da consulta: {list(contacts)}")    
 
     context = {
         'contacts': contacts,
